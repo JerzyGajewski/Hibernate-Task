@@ -44,6 +44,7 @@ public class Book {
                 ", rating=" + rating +
                 ", description='" + description + '\'' +
                 ", publishers=" + publishers.getName() +
+                ", authors=" + authors +
                 '}';
     }
 }

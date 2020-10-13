@@ -18,6 +18,12 @@
         <li>
             <h4>${book.title}</h4>
             <p>publisher: ${book.publishers.name}</p>
+            <p>rating: ${book.rating}</p>
+            <p>
+                <c:forEach items="${book.authors}" var="author">
+                author: ${author.firstName} ${author.lastName}
+            </c:forEach>
+            </p>
         </li>
     </c:forEach>
 </ul>

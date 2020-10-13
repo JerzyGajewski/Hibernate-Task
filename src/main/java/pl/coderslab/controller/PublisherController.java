@@ -3,7 +3,6 @@ package pl.coderslab.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.entity.Book;
 import pl.coderslab.entity.Publisher;
 import pl.coderslab.service.PublisherService;
 
@@ -36,7 +35,13 @@ public class PublisherController {
         Publisher publisher = this.publisherService.findOneById(id);
         return publisher;
     }
-    
+
+    @GetMapping("/find/{name}")
+    @ResponseBody
+    public Publisher findByName(@PathVariable String name){
+        Publisher publisher = this.publisherService.findOneByName(name);
+        return publisher;
+    }
 
     @DeleteMapping("/delete/{id}")
     @ResponseBody

@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import pl.coderslab.dao.BookDao;
+import pl.coderslab.entity.Author;
 import pl.coderslab.entity.Book;
+import pl.coderslab.entity.Publisher;
 
 import java.util.List;
 
@@ -41,5 +43,20 @@ public class BookServiceDb implements BookService {
     @Override
     public List<Book> findAllWithPublisher() {
         return this.bookDao.findAllWithPublisher();
+    }
+
+    @Override
+    public List<Book> findAllByRating(int rating) {
+        return this.bookDao.findAllByRating(rating);
+    }
+
+    @Override
+    public List<Book> findWithPublisher(Publisher publisher) {
+        return this.bookDao.findWithPublisher(publisher);
+    }
+
+    @Override
+    public List<Book> findWithAuthors(Author author) {
+        return this.bookDao.findWithAuthor(author);
     }
 }
