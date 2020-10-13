@@ -23,7 +23,7 @@ public class BookDao {
         } else this.em.merge(book);
     }
 
-    public Book fintOneById(Long id) {
+        public Book fintOneById(Long id) {
         return this.em.find(Book.class, id);
     }
 
